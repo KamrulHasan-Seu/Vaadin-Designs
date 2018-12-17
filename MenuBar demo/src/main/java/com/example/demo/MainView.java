@@ -9,7 +9,6 @@ import com.vaadin.ui.themes.ValoTheme;
 
 @SpringUI
 @Theme("valo")
-@PushStateNavigation
 public class MainView extends UI {
 
     VerticalLayout mainLayout = new VerticalLayout();
@@ -29,6 +28,7 @@ public class MainView extends UI {
         item.addItem("Normal",e -> setMainComponent(new Form()));
         MenuBar.MenuItem stat = menuBar.addItem("statistics",e->setMainComponent(new PlayerStatistics()));
         MenuBar.MenuItem fow = menuBar.addItem("fow",null);
+       // fow.addItem("stats",new MenuCommand(PlayerStatistics.class));
 
         header.addComponent(menuBar);
         //header.setSizeFull();
@@ -49,4 +49,26 @@ public class MainView extends UI {
         mainLayout.setExpandRatio(components,1);
         actualComponent = components;
     }
+
+//    private class MenuCommand implements MenuBar.Command {
+//        private Class myClass;
+//        private Component comp;
+//        public MenuCommand(Class compacClass) {
+//            myClass = compacClass;
+//        }
+//
+//        @Override
+//        public void menuSelected(MenuBar.MenuItem menuItem) {
+//           if(comp == null)
+//               try {
+//                   comp = (Component) myClass.newInstance();
+//               } catch (InstantiationException e) {
+//                   e.printStackTrace();
+//               } catch (IllegalAccessException e) {
+//                   e.printStackTrace();
+//               }
+//               setMainComponent(comp);
+//
+//        }
+//    }
 }
