@@ -12,26 +12,17 @@ import java.util.List;
 public class OnlineAPIReaderDaoImpl implements Online_API_ReaderDao {
 
     @Override
-    public List<Player> getPlayer (String name) {
+    public List<Player> getPlayer(String name) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity <Model> response = restTemplate.exchange(
+        ResponseEntity<Model> response = restTemplate.exchange(
                 "https://cricapi.com/api/playerFinder?apikey=8roPV1IHd6glgHxIkFswOFQBCTC3&name=" + name,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<Model>(){});
+                new ParameterizedTypeReference<Model>() {
+                });
         Model model = response.getBody();
         return model.getData();
     }
 
-    @Override
-    public List<Player> getAllPlayer() {
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity <Model> response = restTemplate.exchange(
-                "https://cricapi.com/api/playerFinder?apikey=8roPV1IHd6glgHxIkFswOFQBCTC3" ,
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<Model>(){});
-        Model model = response.getBody();
-        return model.getData();
-    }
+
 }

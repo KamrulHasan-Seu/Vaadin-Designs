@@ -13,9 +13,5 @@ import java.util.List;
 public class Model {
 
     private List<Player> data;
-    private int ttl;
-    private boolean cache3;
-    private String v;
-    //private Provider provider;
-    private int creditsLeft;
+
 }
