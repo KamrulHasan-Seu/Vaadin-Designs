@@ -14,12 +14,30 @@
     <name>app</name>
     <description>Demo project for Spring Boot</description>
 
+    <repositories>
+
+        <repository>
+            <id>vaadin-addons</id>
+            <url>http://maven.vaadin.com/vaadin-addons</url>
+        </repository>
+    </repositories>
     <properties>
         <java.version>1.8</java.version>
-        <vaadin.version>11.0.3</vaadin.version>
+        <vaadin.version>12.0.5</vaadin.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>de.kaesdingeling</groupId>
+            <artifactId>hybridmenu</artifactId>
+            <version>3.0.15.vaadin10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.appreciated</groupId>
+            <artifactId>app-layout-addon</artifactId>
+            <version>LATEST</version>
+        </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>

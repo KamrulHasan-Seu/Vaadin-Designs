@@ -11,8 +11,6 @@ import com.vaadin.flow.router.Route;
 @Route("push")
 public class PushyView extends VerticalLayout {
 
-
-
     private FeederThread thread;
 
     @Override
